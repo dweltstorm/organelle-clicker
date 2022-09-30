@@ -12,7 +12,7 @@ orgCount = 0
 location = True
 
 def clear():
-  os.system('clear')
+  os.system('cls' if os.name == 'nt' else 'clear')
 
 class Organelle:
   def __init__(self, name, cost, dpc, dps):
