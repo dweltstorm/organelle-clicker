@@ -82,8 +82,8 @@ SmoothER = Organelle("Smooth ER", 10000, 60, 0)
 GolgiApparatus = Organelle("Golgi Apparatus", 100000, 100, 0)
 Centrosome = Organelle("Centrosome", 200000, 125, 0)
 Mitochondria = Organelle("Mitochondria", 300000, 150, 0)
-Nucleoulus = Organelle("Nucleoulus", 500000, 0, 0)
-Nucleus = Organelle("Nucleus", 0, 0, 0)
+Nucleolus = Organelle("Nucleolus", 500000, 0, 2)
+Nucleus = Organelle("Nucleus", 100000000, 0, 4)
 
 
 def processPurchase(organelle, operation):
@@ -245,7 +245,18 @@ def shop():
 
     The mitochondria is the powerhouse of the cell. It is a bean shaped organelle with
   an inner and outer membrane that supplies energy to the rest of the cell.
+──────────────────────────────────────────────────────────────────────────────────────
+[R] {Nucleolus.name} - {"🧬 "+str(Nucleolus.cost)}
+──────────────────────────────────────────────────────────────────────────────────────
+  x{Nucleolus.multiplier} DNA/click
 
+    The nucleolus is an organelle that is in the nucleus and creates ribosomes.
+──────────────────────────────────────────────────────────────────────────────────────
+[T] {Nucleus.name} - {"🧬 "+str(Nucleus.cost)}
+──────────────────────────────────────────────────────────────────────────────────────
+  x{Nucleus.multiplier} DNA/click
+
+    The nucleus is the organelle that contains the nucleoulus and produces DNA, allowing the cell to reproduce. 
   '''
   print(shopScreen)
   key = getkey()
@@ -279,7 +290,11 @@ def shop():
   elif key == "w":
     processPurchase(Centrosome, "add")
   elif key == "e":
-    
+    processPurchase(Mitochondria, "add")
+  elif key == "r":
+    processPurchase(Nucleolus, "multiply")
+  elif key == "t":
+    processPurchase(Nucleus, "multiply")
   else:
     shop()
 
