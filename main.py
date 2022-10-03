@@ -83,7 +83,7 @@ GolgiApparatus = Organelle("Golgi Apparatus", 100000, 100, 0)
 Centrosome = Organelle("Centrosome", 200000, 125, 0)
 Mitochondria = Organelle("Mitochondria", 300000, 150, 0)
 Nucleolus = Organelle("Nucleolus", 500000, 200, 0)
-Nucleus = Organelle("Nucleus", 100000000, 0, 2)
+Nucleus = Organelle("Nucleus", 1000000000, 0, 2)
 
 
 def processPurchase(organelle, operation):
