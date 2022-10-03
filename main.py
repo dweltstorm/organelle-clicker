@@ -82,8 +82,8 @@ SmoothER = Organelle("Smooth ER", 10000, 60, 0)
 GolgiApparatus = Organelle("Golgi Apparatus", 100000, 100, 0)
 Centrosome = Organelle("Centrosome", 200000, 125, 0)
 Mitochondria = Organelle("Mitochondria", 300000, 150, 0)
-Nucleolus = Organelle("Nucleolus", 500000, 0, 2)
-Nucleus = Organelle("Nucleus", 100000000, 0, 4)
+Nucleolus = Organelle("Nucleolus", 500000, 200, 0)
+Nucleus = Organelle("Nucleus", 100000000, 0, 2)
 
 
 def processPurchase(organelle, operation):
@@ -248,7 +248,7 @@ def shop():
 ──────────────────────────────────────────────────────────────────────────────────────
 [R] {Nucleolus.name} - {"🧬 "+str(Nucleolus.cost)}
 ──────────────────────────────────────────────────────────────────────────────────────
-  x{Nucleolus.multiplier} DNA/click
+  +{Nucleolus.dpc} DNA/click
 
     The nucleolus is an organelle that is in the nucleus and creates ribosomes.
 ──────────────────────────────────────────────────────────────────────────────────────
@@ -292,7 +292,7 @@ def shop():
   elif key == "e":
     processPurchase(Mitochondria, "add")
   elif key == "r":
-    processPurchase(Nucleolus, "multiply")
+    processPurchase(Nucleolus, "add")
   elif key == "t":
     processPurchase(Nucleus, "multiply")
   else:
